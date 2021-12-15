@@ -1,0 +1,8 @@
+{
+    "arrowParens": "always",
+    "jsxSingleQuote": true,
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all"
+}

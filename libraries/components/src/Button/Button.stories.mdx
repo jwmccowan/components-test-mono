@@ -1,0 +1,161 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Button from './Button';
+
+<Meta title='components/Button' component={Button} />
+
+# Button
+
+---
+
+The `Button` component is used to allow a user to initiate an action on the app.
+
+## Default Button
+
+The default `Button` component is a text button using the primary brand color, as shown below:
+
+<Canvas>
+  <Story
+    name='Button'
+    args={{ color: 'primary', variant: 'text' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Welcome to App</Button>}
+  </Story>
+</Canvas>
+
+## Variants
+
+Following is a description of the various `variant`s of the `Button` component
+
+### Contained
+
+The `contained` variant is bold and attracts attention, and as such should be used for primary actions in the ui.
+
+Saving a document, continuing a form flow, or loging in are all good use cases for a `contained` button.
+
+The following `contained` `Button` is using the `primary` color to attract the user's intention and imply importance.
+
+<Canvas>
+  <Story
+    name='contained'
+    args={{ color: 'primary', variant: 'contained' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Submit</Button>}
+  </Story>
+</Canvas>
+
+### Outlined
+
+The `outlined` variant is a good way to not clutter the ui with color when displaying multiple actions. It usually pairs with a `contained` button to provide an alternative.
+
+Cancelling a dialog would be an obvious use for an outlined button.
+
+The following `outlined` `Button` is using the `secondary` color to imply that the action is not the primary action (should be paired with a button with `primary` color).
+
+<Canvas>
+  <Story
+    name='outlined'
+    args={{ color: 'secondary', isDisabled: false, variant: 'outlined' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Cancel</Button>}
+  </Story>
+</Canvas>
+
+### Text
+
+The `text` variant is a clean, no-nonsense variant that works well on `Dialog`s. It is the default `Button` `variant` as it is the least obtrusive visually.
+
+The following `text` `Button` is using the `error` color to imply that the action is destructive.
+
+<Canvas>
+  <Story
+    name='text'
+    args={{ color: 'error', isDisabled: false, variant: 'text' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Delete Resource</Button>}
+  </Story>
+</Canvas>
+
+## Color
+
+### Primary
+
+The `primary` color is a bright, beautiful Purple. It is used to imply interactivity and primary action.
+
+In the app, it is used for links and clickable icons. For buttons, it should be used to imply the intended action for a user, such as continuing a form flow or saving a resource.
+
+The following `primary` `Button` is using the `contained` variant to stand out amongst its peers.
+
+<Canvas>
+  <Story
+    name='primary'
+    args={{ color: 'primary', isDisabled: false, variant: 'contained' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Continue</Button>}
+  </Story>
+</Canvas>
+
+### Secondary
+
+The `secondary` color is a neutral dark-grey color, used to imply secondary actions. For `Button`s, it should be used to imply non-permanent or cancelling actions.
+
+`secondary` `Button`s should be paired with another color, usually `primary`, and should not be used with the `contained` variant.
+
+The following `secondary` `Button` is using the `text` variant to hide amongst any `primary` friends.
+
+<Canvas>
+  <Story
+    name='secondary'
+    args={{ color: 'secondary', isDisabled: false, variant: 'text' }}
+    argTypes={{
+      sx: { control: false },
+      className: { control: false },
+      endIcon: { control: false },
+      startIcon: { control: false },
+    }}
+    parameters={{ expanded: true }}
+  >
+    {(props) => <Button {...props}>Cancel</Button>}
+  </Story>
+</Canvas>
+
+## API Documentation
+
+The button accepts the following props:
+
+<ArgsTable of={Button} />
